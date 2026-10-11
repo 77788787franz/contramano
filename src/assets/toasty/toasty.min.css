@@ -1,0 +1,129 @@
+/* ---------- TOAST MINIMALISTA ---------- */
+:root {
+  --toast-bg: rgba(0, 0, 0, 0.92);
+  --toast-text: #ffffff;
+  --border-radius: 8px;
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --success: #064e3b;      /* verde oscuro */
+  --error: #7f1d1d;        /* rojo oscuro */
+  --warning: #92400e;      /* naranja oscuro */
+  --info: #1e3a5f;         /* azul oscuro */
+  --shadow-dark: 0 4px 16px rgba(0, 0, 0, 0.6);
+}
+
+.toast {
+  position: relative;
+  margin-top: 2em;
+  padding: 10px 12px;
+  border-radius: var(--border-radius);
+  font-size: 12px;
+  color: var(--toast-text);
+  box-shadow: var(--shadow-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  pointer-events: all;
+  max-width: 300px;
+  line-height: 1.35;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+}
+
+.toast.fade-show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.toast.fade-hide {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+/* ---------- TIPOS (fondos completos con sombra negra) ---------- */
+.toast--success {
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+  border-left: 3px solid #10b981;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.toast--error {
+  background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+  border-left: 3px solid #ef4444;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.toast--warning {
+  background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
+  border-left: 3px solid #f59e0b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.toast--info {
+  background: linear-gradient(135deg, #1e3a5f 0%, #1e40af 100%);
+  border-left: 3px solid #3b82f6;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* ---------- CONTENEDOR ---------- */
+.toast-container {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  pointer-events: none;
+}
+
+/* ---------- BARRA DE PROGRESO ---------- */
+.toast-progressbar {
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+  animation: progress 3s linear forwards;
+}
+
+@keyframes progress {
+  to { width: 100%; }
+}
+
+/* ---------- ICONOS ---------- */
+.toast-icon {
+  margin-right: 8px;
+  font-size: 14px;
+  filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.5));
+}
+
+.toast--success .toast-icon { color: #10b981; }
+.toast--error   .toast-icon { color: #f87171; }
+.toast--warning .toast-icon { color: #fbbf24; }
+.toast--info    .toast-icon { color: #60a5fa; }
+
+/* ---------- HOVER ---------- */
+.toast:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ---------- ANIMACIONES ---------- */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(40px); }
+}
+
+.toast-container--slideIn  { animation: slideIn  0.5s ease-out forwards; }
+.toast-container--slideOut { animation: slideOut 0.5s ease-in  forwards; }

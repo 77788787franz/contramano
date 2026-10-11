@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Contramano</string>
+    <string name="title_activity_main">Contramano</string>
+    <string name="package_name">com.contramano.interno</string>
+    <string name="custom_url_scheme">com.contramano.interno</string>
+</resources>

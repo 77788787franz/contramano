@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Forzamos todo a negro puro -->
+    <color name="colorPrimary">#000000</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#FFFFFF</color>
+    <color name="colorBackground">#000000</color>
+    <color name="colorSplashBackground">#000000</color>
+    <color name="colorSurface">#000000</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+    
+    <!-- Colores de las barras del sistema -->
+    <color name="colorStatusBar">#000000</color>
+    <color name="colorNavigationBar">#000000</color>
+</resources>

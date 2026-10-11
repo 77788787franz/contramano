@@ -1,0 +1,28 @@
+{
+  "appId": "com.contramano.interno",
+  "appName": "Contramano",
+  "webDir": "dist",
+  "android": {
+    "captureInput": true,
+    "webContentsDebuggingEnabled": false,
+    "loggingBehavior": "none",
+    "backgroundColor": "#000000"
+  },
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0,
+      "launchAutoHide": true,
+      "showSpinner": false,
+      "splashFullScreen": false,
+      "splashImmersive": false
+    },
+    "StatusBar": {
+      "style": "DARK",
+      "backgroundColor": "#000000",
+      "overlaysWebView": false
+    },
+    "Preferences": {
+      "group": "ContramanoStorage"
+    }
+  }
+}

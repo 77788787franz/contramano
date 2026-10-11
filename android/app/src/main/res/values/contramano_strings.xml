@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contramano_service_label">Contramano</string>
+    <string name="contramano_service_description">Abre las apps de tu lista una por una, navega pulsando botones durante el tiempo indicado y pasa a la siguiente. Solo para pruebas.</string>
+</resources>
